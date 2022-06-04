@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/btn_size"
+                android:layout_height="@dimen/btn_size"
+                android:layout_marginStart="@dimen/horizontal_margin_default"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:onClick="finish"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_title_toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_toolbar" />
+
+            <TextView
+                android:id="@+id/txt_title_toolbar"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_size"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="@dimen/vertical_margin_default"
+                android:layout_marginEnd="@dimen/toolbar_size"
+                android:gravity="center"
+                android:text="@{product.title}"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="title" />
+
+
+            <ImageView
+                android:id="@+id/img_product"
+                product_image="@{product.thumbnail}"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_title_toolbar"
+                tools:background="@drawable/cute_cat" />
+
+            <View
+                android:id="@+id/view_detail"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#9CEDEDED"
+                app:layout_constraintBottom_toBottomOf="@id/img_product" />
+
+            <TextView
+                android:id="@+id/txt_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin_default"
+                android:text="@{product.brand}"
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintBottom_toTopOf="@+id/txt_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/view_detail"
+                tools:text="brand" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{'$'+product.price.toString()}"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/view_detail"
+                app:layout_constraintStart_toStartOf="@id/txt_brand"
+                app:layout_constraintTop_toBottomOf="@+id/txt_brand"
+                tools:text="price" />
+
+            <TextView
+                android:id="@+id/txt_discount_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/discount(product.discountPercentage.toString())}"
+                android:textColor="#FF0000"
+                app:layout_constraintBottom_toBottomOf="@id/txt_price"
+                app:layout_constraintEnd_toEndOf="@id/view_detail"
+                app:layout_constraintStart_toEndOf="@id/txt_price"
+                app:layout_constraintTop_toTopOf="@id/txt_price"
+                tools:text="10%" />
+
+            <TextView
+                android:id="@+id/txt_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="#D1C3E3"
+                android:paddingHorizontal="@dimen/horizontal_margin_small"
+                android:paddingVertical="@dimen/horizontal_margin_default"
+                android:text="@{product.rating.toString()}"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/img_product"
+                app:layout_constraintTop_toTopOf="@id/img_product"
+                tools:text="4.7" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lin_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_default"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/img_product" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.pyotolong.shopping.data.Product" />
+    </data>
+</layout>

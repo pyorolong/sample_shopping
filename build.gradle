@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = "1.5.31"
+        koin_version = "3.1.5"
+        lifecycle_version = "2.4.0"
+        room_version = "2.4.2"
+        navigation_version = '2.4.1'
+        firebase_bom_version = "29.0.3"
+        sendbird_version = "3.0.173"
+        preference_version = "1.1.1"
+        glide_version = "4.12.0"
+        glide_transformations_version = "4.3.0"
+        avatar_version = "1.2.0"
+        confetti_version = "1.3.2"
+        biometric_version = "1.1.0"
+        google_play_service = "19.2.0"
+        room_version = "2.3.0"
+        retrofit = "2.9.0"
+
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+        classpath 'com.google.gms:google-services:4.3.10'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

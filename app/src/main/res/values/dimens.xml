@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="horizontal_margin_small">6dp</dimen>
+    <dimen name="horizontal_margin_default">16dp</dimen>
+    <dimen name="horizontal_margin_large">34dp</dimen>
+    <dimen name="horizontal_margin_xlarge">68dp</dimen>
+
+    <dimen name="vertical_margin_small">6dp</dimen>
+    <dimen name="vertical_margin_default">15dp</dimen>
+    <dimen name="vertical_margin_large">23dp</dimen>
+    <dimen name="vertical_margin_xlarge">46dp</dimen>
+
+    <dimen name="text_size_small">11sp</dimen>
+    <dimen name="text_size_default">18sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_xlarge">25sp</dimen>
+
+    <dimen name="toolbar_size">60dp</dimen>
+    <dimen name="btn_size">30dp</dimen>
+
+</resources>
